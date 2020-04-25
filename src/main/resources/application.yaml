@@ -1,0 +1,10 @@
+camunda.bpm.admin-user:
+  id: demo
+  password: demo
+keycloak:
+  serverUrl: http://localhost:8081/auth
+  realm: master
+  usersRealm: Users
+  clientId: admin-cli
+  username: admin
+  password: admin

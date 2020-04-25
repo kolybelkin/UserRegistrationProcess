@@ -1,0 +1,28 @@
+<form role="form" name="form">
+    <script cam-script type="text/form-script">
+        camForm.on('form-loaded', function() {
+            camForm.variableManager.fetchVariable('username');
+            camForm.variableManager.fetchVariable('email');
+        });
+
+        camForm.on('variables-fetched', function() {
+            $scope.username = camForm.variableManager.variableValue('username');
+            $scope.email = camForm.variableManager.variableValue('email');
+        });
+     </script>
+
+    <div class="form-group">
+        <label for="approve-field">Do you approve creating of the following user?</label>
+        <div/>
+        <label for="approve-field">User name: {{username}}</label>
+        <div/>
+        <label for="approve-field">Email address: {{email}}</label>
+        <div/>
+        <label for="approve-field">Decision: </label>
+        <select cam-variable-name="approved"
+                cam-variable-type="Boolean">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+    </div>
+</form>
