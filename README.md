@@ -1,18 +1,18 @@
-#Description
+# Description
 A prototype of a process for registration of users in keycloak from camunda with manual approvals.
 
 Camunda framework uses keycloak admin API for server communications.
 
-#Process diagram
+# Process diagram
 ![picture](process.png)
 
-#How to run and try
+# How to run and try
 The prototype can be run using docker-compose to make it simple. For starting it, use the following commands
 * ```./gradlew clean build dockerCreateDockerfile```
 * ```docker-compose build```
 * ```docker-compose up```
 
-###There are two ways to start the process:
+### There are two ways to start the process:
 1. Using REST API
     * POST http://localhost:8080/rest/process-definition/key/RegistrationProcess/start
     with body
