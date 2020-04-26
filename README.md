@@ -16,11 +16,11 @@ The prototype can be run using docker-compose to make it simple. For starting it
 1. Using REST API
     * POST http://localhost:8080/rest/process-definition/key/RegistrationProcess/start
     with body
-    ```
+    ```json
    {
    	"variables": {
    		"username" : {
-           	"value" : "User1",
+            "value" : "User1",
            	"type": "String"
        	},
        	"email" : {

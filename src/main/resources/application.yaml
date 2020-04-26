@@ -9,7 +9,8 @@ camunda.bpm:
     enabled: true
 
 keycloak:
-  serverUrl: http://localhost:8081/auth
+  #this is a workaround(docker-compose specific url), docker-compose should override this variable
+  serverUrl: http://keycloak:8080/auth
   realm: master
   usersRealm: Users
   clientId: admin-cli
