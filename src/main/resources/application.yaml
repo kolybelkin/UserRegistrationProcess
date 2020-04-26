@@ -1,6 +1,13 @@
-camunda.bpm.admin-user:
-  id: demo
-  password: demo
+camunda.bpm:
+  admin-user:
+    id: demo
+    password: demo
+  filter:
+    create: All tasks
+    history-level: full
+  metrics:
+    enabled: true
+
 keycloak:
   serverUrl: http://localhost:8081/auth
   realm: master

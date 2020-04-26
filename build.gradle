@@ -3,6 +3,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
 	id 'checkstyle'
+	id 'com.bmuschko.docker-spring-boot-application' version '6.4.0'
 }
 
 group = 'com.kolybelkin'
@@ -13,17 +14,19 @@ repositories {
 	mavenCentral()
 }
 
+docker {
+	springBootApplication {
+		baseImage = 'adoptopenjdk/openjdk11:alpine-jre'
+		ports = [8080, 8080]
+	}
+}
+
 dependencies {
 	compile "org.camunda.bpm.springboot:camunda-bpm-spring-boot-starter-rest:3.4.2"
 	compile "org.camunda.bpm.springboot:camunda-bpm-spring-boot-starter-webapp:3.4.2"
 	compile "org.springframework.boot:spring-boot-starter-web"
 	compile 'com.h2database:h2'
-//	compile 'org.camunda.spin:camunda-spin-dataformat-all:1.8.0'
-	compile "org.camunda.spin:camunda-spin-core:1.8.0"
-	compile "org.camunda.spin:camunda-spin-dataformat-json-jackson:1.8.0"
-	compile "org.camunda.spin:camunda-spin-dataformat-xml-dom:1.8.0"
-	compile "org.camunda.bpm:camunda-engine-plugin-spin:7.12.0"
-	compile "javax.activation:activation:1.1"
+	compile 'com.sun.xml.bind:jaxb-impl:2.2.3-1'
 	compile 'org.keycloak:keycloak-admin-client:9.0.3'
 	testCompile 'org.springframework.boot:spring-boot-starter-test'
 }
